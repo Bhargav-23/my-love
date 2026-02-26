@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story ♾️</title>
+<link rel="icon" type="image/x-icon" href="img/pngtree-heart-icon--romance-icon-illustration-png-image_4843247.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+
+<style>
+/* RESET */
+html,body{
+margin:0;
+padding:0;
+height:100%;
+overflow:hidden;
+font-family:'Montserrat',sans-serif;
+color:#fff;
+}
+
+/* BACKGROUND ENGINE */
+#bg-gradient{
+position:fixed;
+inset:0;
+z-index:-4;
+background:
+radial-gradient(circle at 20% 20%, rgba(255,0,128,.35), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(0,200,255,.35), transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(180,0,255,.35), transparent 45%),
+linear-gradient(-45deg,#ff3cac,#784ba0,#2b86c5,#ff758c);
+background-size:600% 600%;
+animation:gradientFlow 30s ease infinite;
+}
+@keyframes gradientFlow{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+#bg-particles{position:fixed;inset:0;z-index:-3}
+
+#bg-glow{
+position:fixed;
+inset:-20%;
+z-index:-2;
+background:radial-gradient(circle,rgba(255,255,255,.12),transparent 60%);
+animation:breath 6s ease-in-out infinite;
+pointer-events:none;
+}
+@keyframes breath{
+0%,100%{transform:scale(1);opacity:.5}
+50%{transform:scale(1.15);opacity:1}
+}
+
+/* SLIDES */
+#slides{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+transition:transform 1.35s cubic-bezier(0.22,1,0.36,1);
+}
+
+.slide{
+width:100%;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:60px;
+box-sizing:border-box;
+}
+
+.glass{
+  width:80%;
+  max-width:900px;
+  padding:60px 70px;
+  border-radius:40px;
+
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(18px);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:24px;
+
+  /* 🔑 IMPORTANT */
+  height:auto;
+  overflow:visible;
+}
+
+
+h1,h2{
+font-family:'Playfair Display',serif;
+margin-bottom:30px;
+}
+
+h1{font-size:4rem}
+h2{font-size:3rem}
+
+p{
+font-size:1.3rem;
+line-height:2.2;
+opacity:.95;
+}
+
+.letter{
+font-family:'Cormorant Garamond',serif;
+font-size:1.8rem;
+font-style:italic;
+}
+
+/* IMAGE SLIDES */
+.image-slide{
+width:100%;
+height:100%;
+border-radius:32px;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.memory-badge{
+  position:relative;
+
+  bottom:24px;   /* 🔽 lock to bottom */
+  left:24px;     /* ⬅️ lock to left */
+
+  display:inline-flex;
+  align-items:center;
+
+  padding:10px 18px;
+  border-radius:999px;
+
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  font-size:0.95rem;
+  font-weight:500;
+  color:#fff;
+
+  width:fit-content;
+  max-width:80%;
+
+  box-shadow:0 8px 30px rgba(0,0,0,0.35);
+}
+
+
+
+
+
+/* HINT */
+.hint{
+position:fixed;
+bottom:25px;
+width:100%;
+text-align:center;
+font-size:.9rem;
+opacity:.6;
+}
+
+@media(max-width:768px){
+h1{font-size:2.6rem}
+h2{font-size:2.1rem}
+p{font-size:1.15rem}
+}
+/* ================= PASSWORD LOCK ================= */
+
+#lockScreen{
+position:fixed;
+inset:0;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(16px);
+transition:opacity 1s ease;
+}
+
+#lockScreen.hidden{
+opacity:0;
+pointer-events:none;
+}
+
+/* MAIN BOX */
+.lockBox{
+width:340px;
+padding:3.2rem 3rem;
+border-radius:28px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(22px);
+box-shadow:0 40px 120px rgba(0,0,0,.8);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:18px;
+
+text-align:center;
+}
+
+/* TITLE */
+.lockBox h2{
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+margin:0;
+}
+
+/* HEART */
+.lockBox .heart{
+font-size:1.8rem;
+margin-top:4px;
+}
+
+/* TEXT */
+.lockBox p{
+margin:0;
+font-size:1rem;
+line-height:1.6;
+opacity:.85;
+}
+
+/* INPUT */
+.lockBox input{
+width:100%;
+max-width:260px;
+padding:14px 16px;
+border-radius:14px;
+border:none;
+outline:none;
+font-size:1rem;
+text-align:center;
+}
+
+/* BUTTON */
+.lockBox button{
+width:100%;
+max-width:260px;
+padding:14px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+font-size:1rem;
+font-weight:600;
+background:#fff;
+color:#000;
+transition:.3s;
+}
+
+.lockBox button:hover{
+transform:translateY(-1px);
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+/* ERROR */
+#error{
+font-size:.9rem;
+color:#ffb3c6;
+opacity:0;
+transition:.3s;
+}
+
+/* SHAKE */
+.shake{
+animation:shake .4s;
+}
+
+@keyframes shake{
+0%{transform:translateX(0)}
+25%{transform:translateX(-6px)}
+50%{transform:translateX(6px)}
+75%{transform:translateX(-6px)}
+100%{transform:translateX(0)}
+}
+
+/* ================= MUSIC CONTROL ================= */
+
+#musicControl{
+position:fixed;
+bottom:22px;
+right:22px;
+width:52px;
+height:52px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+z-index:9998;
+
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(16px);
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+font-size:1.2rem;
+transition:.3s;
+}
+
+#musicControl:hover{
+transform:scale(1.08);
+}
+
+#musicControl.playing{
+animation:pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse{
+0%,100%{box-shadow:0 0 0 rgba(255,255,255,.0)}
+50%{box-shadow:0 0 30px rgba(255,255,255,.35)}
+}
+
+/* ================= PREMIUM ENVELOPE INTRO ================= */
+
+#envelopeScreen{
+position:fixed;
+inset:0;
+z-index:10000;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:28px;
+
+background:radial-gradient(circle at top,#cdb4ff,#9d4edd,#5a189a);
+transition:opacity 1.2s ease;
+}
+
+/* INTRO TEXT */
+.intro-text{
+font-family:'Playfair Display',serif;
+font-size:1.4rem;
+letter-spacing:.5px;
+opacity:.85;
+animation:fadeIn 2s ease forwards;
+}
+
+.tap-text{
+opacity:.6;
+font-size:.9rem;
+}
+
+/* WRAPPER */
+.envelope-wrapper{
+position:relative;
+width:320px;
+height:220px;
+cursor:pointer;
+}
+
+/* SHADOW */
+.envelope-shadow{
+position:absolute;
+bottom:-30px;
+left:50%;
+transform:translateX(-50%);
+width:220px;
+height:40px;
+background:rgba(0,0,0,.25);
+filter:blur(22px);
+border-radius:50%;
+}
+
+/* ENVELOPE BODY */
+.envelope{
+position:relative;
+width:100%;
+height:100%;
+transform-style:preserve-3d;
+}
+
+/* BACK */
+.envelope-back{
+position:absolute;
+inset:0;
+background:linear-gradient(145deg,#ffffff,#f2f2f2);
+border-radius:16px;
+}
+
+/* FLAP */
+.envelope-flap{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#fafafa;
+border-radius:16px;
+
+clip-path:polygon(0 0,100% 0,50% 55%);
+transform-origin:top center;
+
+transform:translateY(0) scaleY(1);
+transition:
+  transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+  opacity 0.6s ease;
+}
+
+/* LETTER */
+.envelope-letter{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+width:88%;
+height:70%;
+background:#fff;
+border-radius:12px;
+box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-family:'Cormorant Garamond',serif;
+font-size:1.4rem;
+opacity:0;
+transition:all 1.1s cubic-bezier(.22,1,.36,1);
+}
+
+
+/* SEAL */
+.seal{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:2rem;
+background:#fff;
+padding:8px;
+border-radius:50%;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+/* OPEN STATE */
+.envelope.open .envelope-flap{
+transform:translateY(-40px) scaleY(0.92);
+opacity:0;
+}
+
+.envelope.open .envelope-letter{
+opacity:1;
+transform:translate(-50%,-60px);
+}
+
+
+/* HIDE */
+#envelopeScreen.hidden{
+opacity:0;
+pointer-events:none;
+}
+
+/* FADE */
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:.85}
+}
+
+/* ================= ENVELOPE HOVER ================= */
+
+/* Smooth base */
+.envelope-wrapper{
+transition:transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* Hover lift */
+.envelope-wrapper:hover .envelope{
+  transform:translateY(-8px) rotateX(6deg);
+}
+
+/* Soft tilt for depth */
+.envelope-wrapper:hover .envelope{
+transform:
+  translateY(-8px)
+  rotateX(6deg);
+}
+
+/* Shadow reacts */
+.envelope-wrapper:hover .envelope-shadow{
+width:200px;
+height:34px;
+opacity:.35;
+filter:blur(26px);
+}
+
+/* Seal micro response */
+.envelope-wrapper:hover .seal{
+transform:translate(-50%,-50%) scale(1.08);
+transition:transform 0.4s ease;
+}
+
+/* Disable hover AFTER opening */
+.envelope.open{
+pointer-events:none;
+}
+
+/* ================= SPLIT SLIDE ================= */
+
+.split-card{
+  width:90%;
+  max-width:1200px;
+  height:70vh;
+
+  display:flex;
+  gap:40px;
+  align-items:stretch;
+}
+
+/* IMAGE SIDE */
+.split-image{
+  width:40%;
+  border-radius:32px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  overflow:hidden;
+}
+
+/* TEXT SIDE */
+.split-text{
+  width:60%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .split-card{
+    flex-direction:column;
+    height:auto;
+  }
+
+  .split-image,
+  .split-text{
+    width:100%;
+  }
+
+  .split-image{
+    height:45vh;
+  }
+}
+
+/* VIDEO SIDE (extends split-image rules) */
+.split-video{
+  width:40%;
+  border-radius:32px;
+  overflow:hidden;
+  position:relative;
+}
+
+.split-video video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* MOBILE VIDEO */
+@media(max-width:900px){
+  .split-video{
+    width:100%;
+    height:45vh;
+  }
+}
+
+/* ================= GLASS WITH IMAGE ================= */
+
+.glass-with-image{
+  position:relative;
+  overflow:hidden;
+}
+
+/* IMAGE INSIDE GLASS */
+.glass-with-image .glass-bg{
+  position:absolute;
+  inset:0;
+  background-image:url('img/us.jpg'); /* 👈 your photo */
+  background-size:cover;
+  background-position:center;
+  filter:blur(6px);
+  transform:scale(1.08);
+  z-index:0;
+}
+
+/* DARK + FROSTED OVERLAY */
+.glass-with-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  z-index:1;
+}
+
+/* CONTENT ABOVE IMAGE */
+.glass-with-image .glass-content{
+  position:relative;
+  z-index:2;
+}
+
+/* reverse layout for alternating slides */
+.split-card.reverse{
+  flex-direction:row-reverse;
+}
+
+/* mobile stays stacked normally */
+@media(max-width:900px){
+  .split-card.reverse{
+    flex-direction:column;
+  }
+}
+
+/* ================= LOVE TIMER ================= */
+
+#loveTimer{
+  position:absolute;
+  top:40px;
+  left:50%;
+  transform:translateX(-50%);
+
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem;
+  text-align:center;
+
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);
+
+  padding:12px 22px;
+  border-radius:999px;
+
+  box-shadow:0 10px 40px rgba(0,0,0,.35);
+  opacity:.9;
+}
+
+#anniversaryMessage{
+  position:absolute;
+  top:40px;
+  left:50%;
+  transform:translateX(-50%);
+
+  font-family:'Playfair Display',serif;
+  text-align:center;
+
+  background:rgba(255,255,255,.22);
+  backdrop-filter:blur(14px);
+
+  padding:16px 26px;
+  border-radius:22px;
+
+  box-shadow:0 12px 50px rgba(0,0,0,.4);
+  animation:fadeInSoft 1.5s ease forwards;
+}
+
+#anniversaryMessage span{
+  font-size:.95rem;
+  opacity:.85;
+}
+
+@keyframes fadeInSoft{
+  from{opacity:0; transform:translate(-50%,10px)}
+  to{opacity:1; transform:translate(-50%,0)}
+}
+
+.private-line{
+  margin-top:18px;
+  font-size:.95rem;
+  opacity:.6;
+}
+
+
+.read-again{
+  margin-top:28px;
+  padding:10px 18px;
+
+  background:rgba(255,255,255,0.18);
+  backdrop-filter:blur(10px);
+
+  border:none;
+  border-radius:999px;
+
+  font-size:.95rem;
+  color:white;
+  cursor:pointer;
+
+  opacity:.8;
+  transition:opacity .3s, transform .3s;
+
+  /* 🔥 FORCE CLICKABILITY */
+  position:relative;
+  z-index:9999;
+  pointer-events:auto;
+}
+
+.read-again:hover{
+  opacity:1;
+  transform:translateY(-1px);
+}
+
+
+</style>
+</head>
+
+<body>
+<!-- PREMIUM ENVELOPE INTRO -->
+<div id="envelopeScreen">
+    <!-- LOVE TIMER -->
+  <div id="loveTimer">
+    We’ve been together for …
+  </div>
+  <div id="anniversaryMessage" style="display:none;">
+    🎉 2 Years Today 🤍<br>
+    <span>Still choosing you.</span>
+  </div>
+
+  <div class="intro-text">A small surprise…</div>
+
+  <div class="envelope-wrapper" onclick="openEnvelope()">
+    <div class="envelope-shadow"></div>
+
+    <div class="envelope">
+      <div class="envelope-flap"></div>
+      <div class="envelope-back"></div>
+
+      <div class="envelope-letter">
+        <p style="color: rgb(0, 0, 0)">For you 🤍</p>
+      </div>
+
+
+      <div class="seal">💝</div>
+    </div>
+  </div>
+
+  <div class="tap-text">Tap to open</div>
+</div>
+
+
+<!-- PASSWORD OVERLAY -->
+<div id="lockScreen">
+  <div class="lockBox">
+    <h2>Private Space</h2>
+    <div class="heart">🤍</div>
+    <p>This is only meant for one person.</p>
+
+    <input 
+      type="password" 
+      id="passwordInput" 
+      placeholder="Enter password"
+      autocomplete="off"
+    >
+
+    <button onclick="checkPassword()">Enter</button>
+
+    <div id="error">Wrong password</div>
+  </div>
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="audio/music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicControl" onclick="toggleMusic()">🎵</div>
+
+
+<!-- BACKGROUND -->
+<div id="bg-gradient"></div>
+<canvas id="bg-particles"></canvas>
+<div id="bg-glow"></div>
+
+<!-- SLIDES -->
+<div id="slides">
+
+<!-- SLIDE 1 -->
+<div class="slide">
+  <div class="glass glass-with-image">
+    <div class="glass-bg"></div>
+
+    <div class="glass-content">
+      <h1>Before anything else—this is for you. 🤍</h1>
+      <p class="letter">
+        I don’t know how often I say this out loud,  
+        but you’ve always been my safe place.  
+        Everything here exists because of you.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- SLIDE 2 -->
+<div class="slide">
+  <div class="split-card reverse">
+
+    <!-- LEFT TEXT (60%) -->
+    <div class="split-text glass">
+      <h2>Before You</h2>
+      <p class="letter">
+        I was not doing fine, at least on the outside 🙂  
+        But inside, things felt unsettled — a little empty, a little confused 🤍  
+        Time was moving ⏳, but I wasn’t sure where I was headed.
+      </p>
+    </div>
+
+    <!-- RIGHT IMAGE (40%) -->
+    <div class="split-image"
+         style="background-image:url('img/before-you.jpg')">
+    </div>
+
+  </div>
+</div>
+
+
+<!-- IMAGE SLIDE -->
+<div class="slide">
+  <div class="image-slide" style="background-image:url('img/1.jpg')">
+    <div class="memory-badge">
+      One of the Best memories 🤍
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide">
+  <div class="split-card reverse">
+
+    <!-- LEFT TEXT (60%) -->
+    <div class="split-text glass">
+      <h2>When You Came In</h2>
+      <p class="letter">
+        You didn’t rush into my life 🌱  
+        You came in quietly — as a best friend 🤍  
+        Somewhere between comfort 🫶, calm 🌙, curiosity ✨, and excitement 💓  
+        I didn’t realize it then… but something important was growing 💫
+      </p>
+    </div>
+
+    <!-- RIGHT IMAGE (40%) -->
+    <div class="split-image"
+         style="background-image:url('img/when-you-came-in.jpg')">
+    </div>
+
+  </div>
+</div>
+
+
+<!-- IMAGE SLIDES -->
+<div class="slide">
+  <div class="image-slide" style="background-image:url('img/2.jpg')"></div>
+</div>
+
+<div class="slide">
+  <div class="image-slide" style="background-image:url('img/3.jpg')"></div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide">
+  <div class="split-card">
+
+    <!-- LEFT IMAGE (40%) -->
+    <div class="split-image"
+         style="background-image:url('img/the-realization.jpg')">
+    </div>
+
+    <!-- RIGHT TEXT (60%) -->
+    <div class="split-text glass">
+      <h2>The Realization</h2>
+
+      <p class="letter">
+        Somewhere along the way, I started waiting for your messages 📱  
+        Your absence felt heavier than I expected 🌫️  
+        And without realizing when, you started feeling like home 🏠  
+        That realization came quietly — and all at once 💥
+      </p>
+    </div>
+    <p class="private-line">
+      You know why this matters.
+    </p>
+
+  </div>
+</div>
+
+
+<!-- IMAGE -->
+<div class="slide">
+  <div class="image-slide" style="background-image:url('img/4.jpg')"></div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide">
+  <div class="glass">
+    <h2>The Hard Part</h2>
+
+    <p class="letter">
+        It wasn’t always easy — misunderstandings happened 😶 
+        But what stayed stronger was your effort & maturity 🤍  <br>
+        Our conversations 🗣️, the trust we built 🔒  
+        That phase wasn’t breaking us… it was teaching me 🌱
+    </p>
+
+  </div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide">
+  <div class="split-card reverse">
+
+    <!-- LEFT TEXT (60%) -->
+    <div class="split-text glass">
+      <h2>The Little Things</h2>
+      <p class="letter">
+        The way you try to change me.<br>
+        The way you still try.<br>
+        The way you choose us.
+      </p>
+    </div>
+
+    <!-- RIGHT VIDEO (40%) -->
+    <div class="split-video">
+      <video
+        src="video/little-things.mp4"
+        autoplay
+        loop
+        muted
+        playsinline>
+      </video>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- IMAGE -->
+<div class="slide">
+  <div class="image-slide" style="background-image:url('img/5.jpg')"></div>
+</div>
+
+<!-- SLIDE 7 : IMAGE + TEXT -->
+<div class="slide">
+  <div class="split-card">
+
+    <!-- LEFT IMAGE (40%) -->
+    <div class="split-image"
+         style="background-image:url('img/7.jpg')">
+    </div>
+
+    <!-- RIGHT TEXT (60%) -->
+    <div class="split-text glass">
+      <h2>A Moment I Hold Close</h2>
+
+      <p class="letter">
+        This is one of those memories I keep coming back to 💫 , 
+        I remember this is the best photo of our first outing
+        that we clicked together on that day of 31/08/25
+        
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FINAL SLIDE WITH VIDEO -->
+<div class="slide">
+  <div class="split-card">
+
+    <!-- LEFT TEXT (60%) -->
+    <div class="split-text glass">
+      <h2>This Isn’t the End</h2>
+      <p class="letter">
+        This will keep growing.  
+        Just like us 🫂🫂.<br>
+  
+        Sorry for the clip but i loved it💝💝.
+      </p>
+    </div>
+
+    <!-- RIGHT VIDEO (40%) -->
+    <div class="split-video">
+      <video 
+        src="video/final.mp4"
+        autoplay
+        loop
+        muted
+        playsinline>
+      </video>
+    </div>
+    <button 
+      class="read-again"
+      onclick="reReadStory(event)">
+      Read this again, slowly 🤍
+    </button>
+
+
+  </div>
+</div>
+
+
+</div>
+
+<div class="hint">Scroll / ⬆️⬇️ — one slide at a time</div>
+
+<script>
+/* ================= MUSIC ================= */
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicControl");
+
+music.volume = 0; // start silent
+
+function toggleMusic(){
+  if(music.paused){
+    music.play().catch(()=>{});
+    musicBtn.classList.add("playing");
+    fadeInMusic();
+  }else{
+    music.pause();
+    musicBtn.classList.remove("playing");
+  }
+}
+
+/* FADE IN */
+function fadeInMusic(){
+  let v = 0;
+  const fade = setInterval(()=>{
+    if(v >= 0.6){
+      clearInterval(fade);
+    }else{
+      v += 0.02;
+      music.volume = v;
+    }
+  },120);
+}
+
+/* PARTICLES */
+const canvas=document.getElementById("bg-particles");
+const ctx=canvas.getContext("2d");
+let w,h;
+function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight}
+window.addEventListener("resize",resize);resize();
+
+class Particle{
+constructor(){this.reset()}
+reset(){
+this.x=Math.random()*w;
+this.y=h+Math.random()*200;
+this.s=Math.random()*0.6+0.4;
+this.a=Math.random()*0.6+0.3;
+this.c=["❤️","✨","💖","🌸","💕","💝"][Math.floor(Math.random()*6)];
+}
+update(){
+this.y-=this.s;
+this.x+=Math.sin(this.y*0.01)*0.3;
+if(this.y<-50)this.reset();
+}
+draw(){
+ctx.globalAlpha=this.a;
+ctx.font="20px serif";
+ctx.fillText(this.c,this.x,this.y);
+}
+}
+const particles=[];
+for(let i=0;i<140;i++)particles.push(new Particle());
+(function animate(){
+ctx.clearRect(0,0,w,h);
+particles.forEach(p=>{p.update();p.draw()});
+requestAnimationFrame(animate);
+})();
+
+/* SLIDE CONTROL */
+let index=0;
+const slides=document.getElementById("slides");
+const total=document.querySelectorAll(".slide").length;
+let locked=false;
+
+function go(dir){
+if(locked) return;
+index=Math.max(0,Math.min(total-1,index+dir));
+slides.style.transform=`translateY(-${index*100}vh)`;
+locked=true;
+setTimeout(()=>locked=false,1400);
+}
+
+window.addEventListener("wheel",e=>{
+go(e.deltaY>0?1:-1);
+});
+
+window.addEventListener("keydown",e=>{
+if(e.key==="ArrowDown") go(1);
+if(e.key==="ArrowUp") go(-1);
+});
+
+/* ================= PASSWORD CHECK ================= */
+
+const CORRECT_PASSWORD = "260825"; // 🔑 CHANGE THIS
+
+function checkPassword(){
+  const input = document.getElementById("passwordInput");
+  const error = document.getElementById("error");
+
+  if(input.value === CORRECT_PASSWORD){
+
+    // hide lock
+    document.getElementById("lockScreen").classList.add("hidden");
+
+    // 🔑 IMPORTANT: play music INSIDE user action
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+
+    music.volume = 0.6;
+    music.play().then(()=>{
+      musicBtn.classList.add("playing");
+    }).catch(err=>{
+      console.log("Autoplay blocked:", err);
+    });
+
+  }else{
+    error.style.opacity = 1;
+  }
+}
+
+
+/* ENTER KEY SUPPORT */
+document.getElementById("passwordInput")
+.addEventListener("keydown",e=>{
+  if(e.key==="Enter") checkPassword();
+});
+
+/* ================= PREMIUM ENVELOPE LOGIC ================= */
+
+function openEnvelope(){
+  const env = document.querySelector(".envelope");
+  env.classList.add("open");
+
+  setTimeout(()=>{
+    document.getElementById("envelopeScreen").classList.add("hidden");
+    document.getElementById("lockScreen").style.display = "flex";
+  },1800);
+}
+
+/* hide lock initially */
+document.getElementById("lockScreen").style.display = "none";
+
+/* ================= ACCURATE LOVE TIMER ================= */
+
+// Proposal date: Aug 26th, 2025
+const startDate = new Date(2025, 7, 26, 0, 0, 0);
+
+function updateLoveTimer(){
+  const now = new Date();
+
+  // 🎉 Anniversary trigger (Jan 12)
+if (
+  now.getMonth() === 0 &&   // January (0-based)
+  now.getDate() === 12
+){
+  document.getElementById("loveTimer").innerHTML =
+    `🎉 <b>2 Years Today 🤍</b><br>
+     <span style="font-size:.9rem;opacity:.85">
+       Still choosing you.
+     </span>`;
+  return;
+}
+
+
+  let years = now.getFullYear() - startDate.getFullYear();
+  let months = now.getMonth() - startDate.getMonth();
+  let days = now.getDate() - startDate.getDate();
+
+  // Adjust days
+  if (days < 0) {
+    months--;
+    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+    days += prevMonth.getDate();
+  }
+
+  // Adjust months
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  // Time difference (today only)
+  const startOfDay = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    startDate.getHours(),
+    startDate.getMinutes(),
+    startDate.getSeconds()
+  );
+
+  let diff = now - startOfDay;
+  if (diff < 0) diff += 24 * 60 * 60 * 1000;
+
+  let seconds = Math.floor(diff / 1000) % 60;
+  let minutes = Math.floor(diff / (1000 * 60)) % 60;
+  let hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+
+  document.getElementById("loveTimer").innerHTML =
+    `We’ve been together for 
+    <b>${months}</b> months, 
+    <b>${days}</b> days, 
+    <b>${hours}</b> hours, 
+    <b>${minutes}</b> minutes, 
+    <b>${seconds}</b> seconds 🤍`;
+}
+
+setInterval(updateLoveTimer, 1000);
+updateLoveTimer();
+
+
+function reReadStory(e){
+  e.stopPropagation();
+
+  // 🔥 RESET TO FIRST SLIDE (THIS IS THE KEY)
+  index = 0;
+  slides.style.transform = "translateY(0)";
+}
+
+
+
+</script>
+
+</body>
+</html>
